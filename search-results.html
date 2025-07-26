@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج البحث - Tripo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search-results.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="index.html" class="nav-brand">
+                        <img src="images/logo.png" alt="Tripo Logo" class="logo" />
+                        <span class="brand-name">Tripo</span>
+                    </a>
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">الرئيسية</a>
+                        <a href="search-results.html" class="nav-link">الرحلات</a>
+                        <a href="#" class="nav-link">الشركات</a>
+                        <a href="#" class="nav-link">من نحن</a>
+                        <a href="#" class="nav-link">اتصل بنا</a>
+                    </div>
+                    <div class="nav-actions">
+                        <div class="language-selector">
+                            <span class="flag">🇪🇬</span>
+                            <span>AR</span>
+                        </div>
+                        <div class="currency-selector">
+                            <span>EGP (ج.م)</span>
+                        </div>
+                        <button class="user-menu">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+    <!-- Compact Search Summary -->
+    <section class="compact-search-header">
+        <div class="container">
+            <div class="compact-search-inline">
+                <div class="compact-route-inline">
+                    <span class="compact-city" id="fromCity">القاهرة</span>
+                    <i class="fas fa-arrow-left compact-arrow"></i>
+                    <span class="compact-city" id="toCity">الإسكندرية</span>
+                </div>
+                
+                <div class="compact-date-inline">
+                    <button class="compact-date-nav" data-direction="prev">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="compact-date-info">
+                        <span class="compact-day">الثلاثاء</span>
+                        <span class="compact-date-num">22</span>
+                        <span class="compact-month">يوليو</span>
+                    </div>
+                    <button class="compact-date-nav" data-direction="next">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+                
+                <button class="compact-modify-btn">
+                    <i class="fas fa-edit"></i>
+                    <span>تعديل</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Control Bar -->
+    <section class="results-control-bar">
+        <div class="container">
+            <div class="control-bar-content">
+                <div class="control-buttons">
+                    <div class="sort-section">
+                        <div class="sort-label">ترتيب حسب:</div>
+                        <div class="sort-options-container">
+                            <div class="sort-options-scroll" id="sortOptionsScroll">
+                                <div class="sort-option-pill active" data-sort="best-deal">
+                                    <i class="fas fa-medal"></i>
+                                    <span>أفضل صفقة</span>
+                                </div>
+                                <div class="sort-option-pill" data-sort="cheapest">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>الأرخص</span>
+                                </div>
+                                <div class="sort-option-pill" data-sort="fastest">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>الأسرع</span>
+                                </div>
+                                <div class="sort-option-pill" data-sort="discounts">
+                                    <i class="fas fa-tags"></i>
+                                    <span>الخصومات</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sort Options Cards -->
+            <div class="sort-cards" id="sortCards" style="display: none;">
+                <div class="sort-card active" data-sort="best">
+                    <div class="sort-title">الأفضل</div>
+                    <div class="sort-price">متوازن</div>
+                    <div class="sort-subtitle">السعر والوقت</div>
+                </div>
+                <div class="sort-card" data-sort="cheapest">
+                    <div class="sort-title">الأرخص</div>
+                    <div class="sort-price">أقل سعر</div>
+                    <div class="sort-subtitle">وفر أكثر</div>
+                </div>
+                <div class="sort-card" data-sort="fastest">
+                    <div class="sort-title">الأسرع</div>
+                    <div class="sort-price">أقل وقت</div>
+                    <div class="sort-subtitle">وصول أسرع</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" style="margin-top: 0;">
+        <div class="container">
+            <div class="results-layout">
+                <!-- Results List -->
+                <main class="results-main">
+                    <div class="trip-results" id="tripResults">
+                        <!-- Trip cards will be loaded here by JavaScript -->
+                        <div style="text-align: center; padding: 40px;">
+                            <i class="fas fa-spinner fa-spin" style="font-size: 24px; color: #1e40af;"></i>
+                            <p style="margin-top: 10px; color: #64748b;">جاري تحميل الرحلات...</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trip Details Modal -->
+    <div id="tripModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">تفاصيل الرحلة</h3>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Trip details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/search-results-manager.js"></script>
+</body>
+</html>

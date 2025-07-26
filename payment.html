@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الحجز - Tripo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Notifications Container -->
+    <div id="notifications-container"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="index.html" class="nav-brand">
+                        <img src="images/logo.png" alt="Tripo Logo" class="logo" />
+                        <span class="brand-name">Tripo</span>
+                    </a>
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">الرئيسية</a>
+                        <a href="search-results.html" class="nav-link">الرحلات</a>
+                        <a href="#" class="nav-link">الشركات</a>
+                        <a href="#" class="nav-link">من نحن</a>
+                        <a href="#" class="nav-link">اتصل بنا</a>
+                    </div>
+                    <div class="nav-actions">
+                        <div class="language-selector">
+                            <span class="flag">🇪🇬</span>
+                            <span>AR</span>
+                        </div>
+                        <div class="currency-selector">
+                            <span>EGP (ج.م)</span>
+                        </div>
+                        <button class="user-menu">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+    <!-- Main Content -->
+    <main class="payment-main">
+        <div class="container">
+            <div class="payment-header">
+                <h1>إتمام الحجز</h1>
+                <p>املأ البيانات المطلوبة لإتمام حجزك</p>
+            </div>
+
+            <div class="payment-container">
+                <!-- Payment Form -->
+                <div class="payment-form-section">
+                    <form id="paymentForm" class="payment-form">
+                        <!-- Personal Information -->
+                        <div class="form-card">
+                            <div class="card-header">
+                                <i class="fas fa-user"></i>
+                                <h3>البيانات الشخصية</h3>
+                            </div>
+                            
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="fullName">الاسم كاملاً *</label>
+                                    <input type="text" id="fullName" name="fullName" class="form-input" placeholder="أدخل اسمك الكامل" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">رقم الموبايل *</label>
+                                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="01xxxxxxxxx" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">البريد الإلكتروني</label>
+                                        <input type="email" id="email" name="email" class="form-input" placeholder="example@email.com">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nationalId">رقم البطاقة الشخصية *</label>
+                                    <input type="text" id="nationalId" name="nationalId" class="form-input" placeholder="14 رقم" required>
+                                    <small class="form-help">مطلوب لاستلام التذكرة</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Methods -->
+                        <div class="form-card">
+                            <div class="card-header">
+                                <i class="fas fa-credit-card"></i>
+                                <h3>طريقة الدفع</h3>
+                            </div>
+                            
+                            <div class="card-body">
+                                <div class="payment-methods">
+                                    <!-- Vodafone Cash -->
+                                    <div class="payment-option">
+                                        <input type="radio" id="vodafone" name="paymentMethod" value="vodafone-cash" checked>
+                                        <label for="vodafone" class="payment-method-card">
+                                            <div class="method-icon vodafone-icon">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                            <div class="method-info">
+                                                <h4>فودافون كاش</h4>
+                                                <p>دفع سريع وآمن</p>
+                                            </div>
+                                            <div class="method-badge popular">الأكثر استخداماً</div>
+                                        </label>
+                                    </div>
+
+                                    <!-- InstaPay -->
+                                    <div class="payment-option">
+                                        <input type="radio" id="instapay" name="paymentMethod" value="instapay">
+                                        <label for="instapay" class="payment-method-card">
+                                            <div class="method-icon instapay-icon">
+                                                <i class="fas fa-credit-card"></i>
+                                            </div>
+                                            <div class="method-info">
+                                                <h4>إنستا باي</h4>
+                                                <p>تحويل عبر الإيميل</p>
+                                            </div>
+                                            <div class="method-badge fast">سريع</div>
+                                        </label>
+                                    </div>
+
+                                    <!-- Bank Transfer -->
+                                    <div class="payment-option">
+                                        <input type="radio" id="bank" name="paymentMethod" value="bank-transfer">
+                                        <label for="bank" class="payment-method-card">
+                                            <div class="method-icon bank-icon">
+                                                <i class="fas fa-university"></i>
+                                            </div>
+                                            <div class="method-info">
+                                                <h4>تحويل بنكي</h4>
+                                                <p>تحويل مباشر من البنك</p>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <!-- Cash on Delivery -->
+                                    <div class="payment-option">
+                                        <input type="radio" id="cash" name="paymentMethod" value="cash-on-delivery">
+                                        <label for="cash" class="payment-method-card">
+                                            <div class="method-icon cash-icon">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                            </div>
+                                            <div class="method-info">
+                                                <h4>كاش عند الاستلام</h4>
+                                                <p>ادفع في المحطة</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Details -->
+                        <div class="form-card payment-details-card">
+                            <!-- Vodafone Cash Details -->
+                            <div id="vodafone-cash-details" class="payment-details-section active">
+                                <div class="card-header">
+                                    <i class="fas fa-mobile-alt vodafone-color"></i>
+                                    <h3>تعليمات فودافون كاش</h3>
+                                </div>
+                                
+                                <div class="card-body">
+                                    <div class="transfer-steps">
+                                        <div class="step">
+                                            <span class="step-number">1</span>
+                                            <div class="step-content">
+                                                <h4>احول على الرقم التالي:</h4>
+                                                <div class="transfer-number-box">
+                                                    <span class="transfer-number">01012345678</span>
+                                                    <button type="button" class="copy-btn" onclick="copyToClipboard('01012345678')">
+                                                        <i class="fas fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="step">
+                                            <span class="step-number">2</span>
+                                            <div class="step-content">
+                                                <h4>المبلغ المطلوب:</h4>
+                                                <div class="amount-box" id="vodafoneAmount">230 ج.م</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="step">
+                                            <span class="step-number">3</span>
+                                            <div class="step-content">
+                                                <div class="form-group">
+                                                    <label for="vodafoneSender">رقمك المحول منه *</label>
+                                                    <input type="tel" id="vodafoneSender" name="senderNumber" class="form-input" placeholder="01xxxxxxxxx" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="step">
+                                            <span class="step-number">4</span>
+                                            <div class="step-content">
+                                                <div class="form-group">
+                                                    <label for="vodafoneScreenshot">صورة شاشة التحويل *</label>
+                                                    <div class="file-upload-zone">
+                                                        <input type="file" id="vodafoneScreenshot" name="vodafoneScreenshot" accept="image/*" required>
+                                                        <div class="upload-content">
+                                                            <i class="fas fa-camera"></i>
+                                                            <span>اختر صورة شاشة التحويل</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- InstaPay Details -->
+                            <div id="instapay-details" class="payment-details-section">
+                                <div class="card-header">
+                                    <i class="fas fa-credit-card instapay-color"></i>
+                                    <h3>تعليمات إنستا باي</h3>
+                                </div>
+                                
+                                <div class="card-body">
+                                    <div class="transfer-steps">
+                                        <div class="step">
+                                            <span class="step-number">1</span>
+                                            <div class="step-content">
+                                                <h4>احول على الإيميل التالي:</h4>
+                                                <div class="transfer-number-box">
+                                                    <span class="transfer-email">payments@tripo.com</span>
+                                                    <button type="button" class="copy-btn" onclick="copyToClipboard('payments@tripo.com')">
+                                                        <i class="fas fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="step">
+                                            <span class="step-number">2</span>
+                                            <div class="step-content">
+                                                <div class="form-group">
+                                                    <label for="instapayEmail">إيميلك المحول منه *</label>
+                                                    <input type="email" id="instapayEmail" name="instapayEmail" class="form-input" placeholder="your-email@example.com" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="step">
+                                            <span class="step-number">3</span>
+                                            <div class="step-content">
+                                                <div class="form-group">
+                                                    <label for="instapayScreenshot">صورة شاشة التحويل *</label>
+                                                    <div class="file-upload-zone">
+                                                        <input type="file" id="instapayScreenshot" name="instapayScreenshot" accept="image/*" required>
+                                                        <div class="upload-content">
+                                                            <i class="fas fa-camera"></i>
+                                                            <span>اختر صورة شاشة التحويل</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bank Transfer Details -->
+                            <div id="bank-transfer-details" class="payment-details-section">
+                                <div class="card-header">
+                                    <i class="fas fa-university bank-color"></i>
+                                    <h3>تعليمات التحويل البنكي</h3>
+                                </div>
+                                
+                                <div class="card-body">
+                                    <div class="bank-info-box">
+                                        <h4>بيانات الحساب:</h4>
+                                        <div class="bank-details">
+                                            <div class="bank-item">
+                                                <strong>البنك:</strong> البنك الأهلي المصري
+                                            </div>
+                                            <div class="bank-item">
+                                                <strong>رقم الحساب:</strong>
+                                                <span class="account-number">123456789012345</span>
+                                                <button type="button" class="copy-btn" onclick="copyToClipboard('123456789012345')">
+                                                    <i class="fas fa-copy"></i>
+                                                </button>
+                                            </div>
+                                            <div class="bank-item">
+                                                <strong>اسم الحساب:</strong> شركة تريبو للنقل السياحي
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="bankScreenshot">صورة إيصال التحويل *</label>
+                                        <div class="file-upload-zone">
+                                            <input type="file" id="bankScreenshot" name="bankScreenshot" accept="image/*" required>
+                                            <div class="upload-content">
+                                                <i class="fas fa-camera"></i>
+                                                <span>اختر صورة إيصال التحويل</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cash on Delivery Details -->
+                            <div id="cash-on-delivery-details" class="payment-details-section">
+                                <div class="card-header">
+                                    <i class="fas fa-money-bill-wave cash-color"></i>
+                                    <h3>الدفع كاش عند الاستلام</h3>
+                                </div>
+                                
+                                <div class="card-body">
+                                    <div class="cash-instructions">
+                                        <div class="instruction-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>احضر للمحطة قبل موعد السفر بـ 30 دقيقة</span>
+                                        </div>
+                                        <div class="instruction-item">
+                                            <i class="fas fa-id-card"></i>
+                                            <span>أحضر البطاقة الشخصية ورقم الحجز</span>
+                                        </div>
+                                        <div class="instruction-item">
+                                            <i class="fas fa-money-bill"></i>
+                                            <span>المبلغ المطلوب: <strong id="cashAmount">230 ج.م</strong></span>
+                                        </div>
+                                        <div class="instruction-item">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                            <span>لا يُقبل الدفع إلا بالعملة المصرية</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-card">
+                            <div class="card-body">
+                                <label class="terms-checkbox">
+                                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                    <span class="checkmark"></span>
+                                    <span class="terms-text">
+                                        أوافق على <a href="#" class="terms-link">الشروط والأحكام</a> 
+                                        و <a href="#" class="terms-link">سياسة الخصوصية</a>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-booking-btn">
+                            <i class="fas fa-lock"></i>
+                            <span>إتمام الحجز الآن</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Booking Summary Sidebar -->
+                <div class="booking-summary">
+                    <div class="summary-card">
+                        <div class="summary-header">
+                            <h3>ملخص الحجز</h3>
+                        </div>
+                        
+                        <div class="summary-body">
+                            <!-- Trip Info -->
+                            <div class="trip-summary">
+                                <div class="company-section">
+                                    <img id="companyLogo" src="images/companies/horus.png" alt="Company Logo" class="company-logo">
+                                    <span id="companyName" class="company-name">حورس للنقل</span>
+                                </div>
+                                
+                                <div class="route-section">
+                                    <div class="route-cities">
+                                        <span id="departureCity">القاهرة</span>
+                                        <i class="fas fa-arrow-left"></i>
+                                        <span id="arrivalCity">الإسكندرية</span>
+                                    </div>
+                                    <div class="trip-date" id="tripDate">الأحد، 20 يوليو 2025</div>
+                                    <div class="trip-time">
+                                        <span id="departureTime">08:00</span>
+                                        <span> - </span>
+                                        <span id="arrivalTime">11:30</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Selected Seats -->
+                            <div class="seats-summary">
+                                <h4>المقاعد المحددة</h4>
+                                <div id="selectedSeatsList" class="seats-list">
+                                    <!-- Will be populated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <!-- Price Breakdown -->
+                            <div class="price-breakdown">
+                                <div class="price-item">
+                                    <span>قيمة التذاكر:</span>
+                                    <span id="ticketsPrice">180 ج.م</span>
+                                </div>
+                                <div class="price-item">
+                                    <span>رسوم الخدمة:</span>
+                                    <span id="serviceFee">20 ج.م</span>
+                                </div>
+                                <div class="price-item">
+                                    <span>ضريبة القيمة المضافة:</span>
+                                    <span id="taxAmount">30 ج.م</span>
+                                </div>
+                                <div class="price-divider"></div>
+                                <div class="price-item total">
+                                    <span>المجموع النهائي:</span>
+                                    <span id="finalTotal">230 ج.م</span>
+                                </div>
+                            </div>
+
+                            <!-- Security Features -->
+                            <div class="security-features">
+                                <div class="security-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>دفع آمن ومحمي</span>
+                                </div>
+                                <div class="security-item">
+                                    <i class="fas fa-undo"></i>
+                                    <span>إلغاء مجاني حتى 24 ساعة</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html>

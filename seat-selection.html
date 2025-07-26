@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختيار المقعد - Tripo</title>
+    <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/search-results.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="index.html" class="nav-brand">
+                        <img src="images/logo.png" alt="Tripo Logo" class="logo" />
+                        <span class="brand-name">Tripo</span>
+                    </a>
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">الرئيسية</a>
+                        <a href="search-results.html" class="nav-link">الرحلات</a>
+                        <a href="#" class="nav-link">الشركات</a>
+                        <a href="#" class="nav-link">من نحن</a>
+                        <a href="#" class="nav-link">اتصل بنا</a>
+                    </div>
+                    <div class="nav-actions">
+                        <div class="language-selector">
+                            <span class="flag">🇪🇬</span>
+                            <span>AR</span>
+                        </div>
+                        <div class="currency-selector">
+                            <span>EGP (ج.م)</span>
+                        </div>
+                        <button class="user-menu">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+    <!-- Trip Info -->
+    <section class="trip-info-header card">
+        <div class="container">
+            <div class="trip-summary flex-row">
+                <div class="company-info flex-row">
+                    <img id="companyLogo" src="images/companies/gobus.png" alt="Company Logo" class="company-logo" />
+                    <div class="trip-details">
+                        <h2 id="companyName" class="section-title">جو باص</h2>
+                        <div class="route-info">
+                            <span id="departureCity">القاهرة</span>
+                            <i class="fas fa-arrow-left"></i>
+                            <span id="arrivalCity">شرم الشيخ</span>
+                        </div>
+                        <div class="time-info">
+                            <span id="departureTime">07:00</span>
+                            <span class="separator">-</span>
+                            <span id="arrivalTime">13:00</span>
+                            <span class="duration" id="duration">(6 ساعات)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bus-type flex-col">
+                    <span class="bus-class" id="busClass">Elite Plus</span>
+                    <div class="amenities flex-row">
+                        <span class="amenity"><i class="fas fa-wifi"></i> واي فاي</span>
+                        <span class="amenity"><i class="fas fa-snowflake"></i> تكييف</span>
+                        <span class="amenity"><i class="fas fa-plug"></i> شاحن</span>
+                        <span class="amenity"><i class="fas fa-tv"></i> شاشة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seat Selection -->
+    <section class="seat-selection">
+        <div class="container flex-row">
+            <!-- Seat Map -->
+            <div class="seat-map-container card">
+                <h3 id="seatSelectionTitle" class="section-title">اختر مقاعدك</h3>
+                
+                <!-- Legend -->
+                <div class="seat-legend flex-row">
+                    <div class="legend-item">
+                        <div class="seat-icon available"></div>
+                        <span>مقعد ممر - متاح</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat-icon available window"></div>
+                        <span>مقعد نافذة - متاح</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat-icon selected"></div>
+                        <span>محدد</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat-icon occupied"></div>
+                        <span>محجوز</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat-icon premium"></div>
+                        <span>مقعد مميز</span>
+                    </div>
+                </div>
+
+                <!-- Pricing Info -->
+                <div class="pricing-legend flex-row">
+                    <div class="price-info">
+                        <span class="price-label">مقاعد الممر:</span>
+                        <span class="price-value" id="aislePrice">-</span>
+                    </div>
+                    <div class="price-info">
+                        <span class="price-label">مقاعد النافذة:</span>
+                        <span class="price-value" id="windowPrice">-</span>
+                    </div>
+                    <div class="price-info premium">
+                        <span class="price-label">المقاعد المميزة (نافذة):</span>
+                        <span class="price-value" id="premiumWindowPrice">-</span>
+                    </div>
+                    <div class="price-info premium">
+                        <span class="price-label">المقاعد المميزة (ممر):</span>
+                        <span class="price-value" id="premiumAislePrice">-</span>
+                    </div>
+                </div>
+
+                <!-- Bus Layout -->
+                <div class="bus-layout">
+                    <div class="bus-front">
+                        <i class="fas fa-steering-wheel"></i>
+                        <span>مقدمة الأتوبيس</span>
+                    </div>
+                    
+                    <div class="seats-container" id="seatsContainer">
+                        <!-- Seats will be generated by JavaScript -->
+                    </div>
+                    
+                    <div class="bus-back">
+                        <span>مؤخرة الأتوبيس</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Summary -->
+            <div class="booking-summary card">
+                <h3 class="section-title">ملخص الحجز</h3>
+                
+                <div class="trip-summary-card">
+                    <div class="summary-row">
+                        <span>الرحلة:</span>
+                        <span id="summaryRoute">القاهرة → شرم الشيخ</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>التاريخ:</span>
+                        <span id="summaryDate">الاثنين، 22 يوليو 2025</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>الوقت:</span>
+                        <span id="summaryTime">07:00 - 13:00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>الشركة:</span>
+                        <span id="summaryCompany">جو باص</span>
+                    </div>
+                </div>
+
+                <div class="selected-seats" id="selectedSeats">
+                    <h4 id="selectedSeatsTitle" class="section-title">المقاعد المحددة</h4>
+                    <div class="seats-list" id="seatsList">
+                        <p class="no-seats">لم يتم تحديد أي مقاعد بعد</p>
+                    </div>
+                </div>
+
+                <div class="price-breakdown" id="priceBreakdown">
+                    <div class="price-row">
+                        <span>المجموع الفرعي:</span>
+                        <span id="subtotal">0 ج.م</span>
+                    </div>
+                    <div class="price-row">
+                        <span>رسوم الخدمة:</span>
+                        <span id="serviceFee">0 ج.م</span>
+                    </div>
+                    <hr>
+                    <div class="price-row total">
+                        <span>المجموع النهائي:</span>
+                        <span id="totalPrice">0 ج.م</span>
+                    </div>
+                </div>
+
+                <button class="book-now-btn main-btn" id="bookNowBtn" disabled onclick="proceedToPayment()">
+                    احجز الآن
+                </button>
+
+                <div class="booking-terms">
+                    <p><i class="fas fa-info-circle"></i> يمكنك إلغاء الحجز مجاناً حتى 24 ساعة قبل موعد الرحلة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seat Tooltip -->
+    <div id="seatTooltip" class="seat-tooltip">
+        <div class="tooltip-content">
+            <div class="seat-info">
+                <span class="seat-number"></span>
+                <span class="seat-price"></span>
+            </div>
+            <div class="seat-features"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/seat-selection.js"></script>
+</body>
+</html>
+</html>

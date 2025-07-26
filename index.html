@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripo - منصة حجز الأتوبيسات الرائدة في مصر</title>
+    <meta name="description" content="احجز تذاكر الأتوبيس بسهولة مع Tripo - أفضل الأسعار، أكثر من 20 شركة نقل، حجز فوري وآمن">
+    <link rel="stylesheet" href="css/style-new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- Header -->
+    <!--#include file="header.html" -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <a href="#home" class="logo">
+                <div class="logo-container">
+                    <i class="fas fa-bus logo-icon"></i>
+                </div>
+                <span class="brand-name">Tripo</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                <li><a href="#features" class="nav-link">المميزات</a></li>
+                <li><a href="#companies" class="nav-link">الشركات</a></li>
+                <li><a href="#about" class="nav-link">من نحن</a></li>
+                <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                <li><a href="#" class="nav-link auth-link">
+                    <i class="fas fa-user-plus"></i>
+                    إنشاء حساب
+                </a></li>
+                <li><a href="#" class="nav-link auth-link login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    تسجيل الدخول
+                </a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-links">
+                <li><a href="#home">
+                    <i class="fas fa-home"></i>
+                    الرئيسية
+                </a></li>
+                <li><a href="#features">
+                    <i class="fas fa-star"></i>
+                    المميزات
+                </a></li>
+                <li><a href="#companies">
+                    <i class="fas fa-bus"></i>
+                    الشركات
+                </a></li>
+                <li><a href="#about">
+                    <i class="fas fa-info-circle"></i>
+                    من نحن
+                </a></li>
+                <li><a href="#contact">
+                    <i class="fas fa-phone"></i>
+                    اتصل بنا
+                </a></li>
+                <li><a href="#" class="auth-mobile">
+                    <i class="fas fa-user-plus"></i>
+                    إنشاء حساب
+                </a></li>
+                <li><a href="#" class="auth-mobile login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    تسجيل الدخول
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+                    <span class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        منصة الحجز الأولى في مصر
+                    </span>
+                    <h1 class="hero-title">
+                        سافر بأمان وراحة
+                        <span class="gradient-text">مع أفضل شركات النقل</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        احجز تذكرة الأتوبيس الخاصة بك في ثوانٍ معدودة. أكثر من 20 شركة نقل، 
+                        أفضل الأسعار، وتأكيد فوري لحجزك.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">مسافر سعيد</div>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">شركة نقل</div>
+                        </div>
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">مدينة</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Search Form -->
+                <div class="search-form-container" data-aos="fade-up" data-aos-delay="300">
+                    <div class="search-form">
+                        <div class="form-header">
+                            <h3>ابحث عن رحلتك</h3>
+                            <p>اختر وجهتك وتاريخ السفر</p>
+                        </div>
+                        
+                        <div class="search-row">
+                            <div class="field-group from-field">
+                                <label for="from">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    من
+                                </label>
+                                <div class="custom-select-wrapper">
+                                    <input type="text" id="from" class="form-control custom-select-input" placeholder="اكتب أو اختر مدينة المغادرة" autocomplete="off" readonly>
+                                    <div class="custom-select-icon">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="custom-select-dropdown" id="from-dropdown">
+                                        <div class="search-box">
+                                            <input type="text" class="search-input" placeholder="ابحث عن مدينة...">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <ul class="custom-select-options" id="from-options">
+                                            <li data-value="cairo">القاهرة</li>
+                                            <li data-value="alexandria">الإسكندرية</li>
+                                            <li data-value="giza">الجيزة</li>
+                                            <li data-value="aswan">أسوان</li>
+                                            <li data-value="luxor">الأقصر</li>
+                                            <li data-value="sohag">سوهاج</li>
+                                            <li data-value="assiut">أسيوط</li>
+                                            <li data-value="minya">المنيا</li>
+                                            <li data-value="benisuef">بني سويف</li>
+                                            <li data-value="fayoum">الفيوم</li>
+                                            <li data-value="portsaid">بورسعيد</li>
+                                            <li data-value="suez">السويس</li>
+                                            <li data-value="ismailiya">الإسماعيلية</li>
+                                            <li data-value="damanhour">دمنهور</li>
+                                            <li data-value="tanta">طنطا</li>
+                                            <li data-value="mahalla">المحلة الكبرى</li>
+                                            <li data-value="zagazig">الزقازيق</li>
+                                            <li data-value="mansoura">المنصورة</li>
+                                            <li data-value="arish">العريش</li>
+                                            <li data-value="qena">قنا</li>
+                                            <li data-value="hurghada">الغردقة</li>
+                                            <li data-value="sharm">شرم الشيخ</li>
+                                            <li data-value="dahab">دهب</li>
+                                            <li data-value="marsamatrouh">مرسى مطروح</li>
+                                            <li data-value="siwa">سيوة</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="swap-btn" onclick="swapLocations()" title="عكس الاتجاه">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                            
+                            <div class="field-group to-field">
+                                <label for="to">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    إلى
+                                </label>
+                                <div class="custom-select-wrapper">
+                                    <input type="text" id="to" class="form-control custom-select-input" placeholder="اكتب أو اختر مدينة الوصول" autocomplete="off" readonly>
+                                    <div class="custom-select-icon">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="custom-select-dropdown" id="to-dropdown">
+                                        <div class="search-box">
+                                            <input type="text" class="search-input" placeholder="ابحث عن مدينة...">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <ul class="custom-select-options" id="to-options">
+                                            <li data-value="cairo">القاهرة</li>
+                                            <li data-value="alexandria">الإسكندرية</li>
+                                            <li data-value="giza">الجيزة</li>
+                                            <li data-value="aswan">أسوان</li>
+                                            <li data-value="luxor">الأقصر</li>
+                                            <li data-value="sohag">سوهاج</li>
+                                            <li data-value="assiut">أسيوط</li>
+                                            <li data-value="minya">المنيا</li>
+                                            <li data-value="benisuef">بني سويف</li>
+                                            <li data-value="fayoum">الفيوم</li>
+                                            <li data-value="portsaid">بورسعيد</li>
+                                            <li data-value="suez">السويس</li>
+                                            <li data-value="ismailiya">الإسماعيلية</li>
+                                            <li data-value="damanhour">دمنهور</li>
+                                            <li data-value="tanta">طنطا</li>
+                                            <li data-value="mahalla">المحلة الكبرى</li>
+                                            <li data-value="zagazig">الزقازيق</li>
+                                            <li data-value="mansoura">المنصورة</li>
+                                            <li data-value="arish">العريش</li>
+                                            <li data-value="qena">قنا</li>
+                                            <li data-value="hurghada">الغردقة</li>
+                                            <li data-value="sharm">شرم الشيخ</li>
+                                            <li data-value="dahab">دهب</li>
+                                            <li data-value="marsamatrouh">مرسى مطروح</li>
+                                            <li data-value="siwa">سيوة</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="field-group date-field">
+                                <label for="date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    تاريخ السفر
+                                </label>
+                                <div class="custom-date-wrapper">
+                                    <div class="date-display" id="date-display">
+                                        <span class="date-text">اختر تاريخ السفر</span>
+                                        <i class="fas fa-calendar-alt date-icon"></i>
+                                    </div>
+                                    
+                                    <!-- Custom Calendar -->
+                                    <div class="custom-calendar" id="custom-calendar">
+                                        <div class="calendar-header">
+                                            <button type="button" class="calendar-nav" id="prev-month">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                            <div class="calendar-title" id="calendar-title">
+                                                <span class="month-year"></span>
+                                            </div>
+                                            <button type="button" class="calendar-nav" id="next-month">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="calendar-weekdays">
+                                            <div class="weekday">ح</div>
+                                            <div class="weekday">ن</div>
+                                            <div class="weekday">ث</div>
+                                            <div class="weekday">ر</div>
+                                            <div class="weekday">خ</div>
+                                            <div class="weekday">ج</div>
+                                            <div class="weekday">س</div>
+                                        </div>
+                                        
+                                        <div class="calendar-days" id="calendar-days">
+                                            <!-- Days will be generated by JavaScript -->
+                                        </div>
+                                        
+                                        <div class="calendar-footer">
+                                            <button type="button" class="calendar-today-btn" id="calendar-today">
+                                                <i class="fas fa-calendar-day"></i>
+                                                اليوم
+                                            </button>
+                                            <button type="button" class="calendar-close-btn" id="calendar-close">
+                                                <i class="fas fa-times"></i>
+                                                إغلاق
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Hidden input for form submission -->
+                                    <input type="date" id="date" class="hidden-date-input" min="">
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="search-btn" onclick="searchTrips()">
+                                <i class="fas fa-search"></i>
+                                ابحث الآن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="800" onclick="scrollToFeatures()">
+            <div class="scroll-arrow"></div>
+            <div class="scroll-text">استكشف المزيد</div>
+        </div>
+    </section>
+               
+            
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div style="height: 20px;"></div>
+                <span class="section-badge">مميزاتنا</span>
+                <h2 class="section-title">لماذا تختار Tripo؟</h2>
+                <p class="section-subtitle">نوفر لك تجربة حجز مميزة وآمنة مع أفضل الخدمات</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>حجز آمن ومضمون</h3>
+                    <p>نضمن لك أمان معلوماتك الشخصية وبياناتك المالية مع تشفير عالي المستوى</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>تأكيد فوري</h3>
+                    <p>احصل على تأكيد حجزك فوراً عبر الرسائل النصية والبريد الإلكتروني</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>أفضل الأسعار</h3>
+                    <p>مقارنة فورية للأسعار من جميع الشركات لضمان حصولك على أفضل سعر</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>سهولة الاستخدام</h3>
+                    <p>واجهة بسيطة وسهلة الاستخدام على جميع الأجهزة والهواتف الذكية</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>دعم 24/7</h3>
+                    <p>فريق خدمة العملاء متاح على مدار الساعة لمساعدتك في أي استفسار</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>إلغاء مجاني</h3>
+                    <p>إمكانية إلغاء الحجز مجاناً حتى 24 ساعة قبل موعد الرحلة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies" id="companies">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">شركاؤنا</span>
+                <h2 class="section-title">أفضل شركات النقل في مصر</h2>
+                <p class="section-subtitle">نتعاون مع أكثر من 20 شركة نقل لضمان أفضل خدمة لك</p>
+            </div>
+            
+            <div class="companies-grid">
+                <div class="company-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="company-logo">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>النقل الجماعي</h3>
+                    <div class="company-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.8/5</span>
+                    </div>
+                    <p>رحلات يومية إلى جميع المحافظات</p>
+                </div>
+                
+                <div class="company-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="company-logo">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>السوبر جيت</h3>
+                    <div class="company-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.9/5</span>
+                    </div>
+                    <p>أتوبيسات حديثة ومكيفة</p>
+                </div>
+                
+                <div class="company-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="company-logo">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>البلو باص</h3>
+                    <div class="company-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.7/5</span>
+                    </div>
+                    <p>رحلات سياحية مريحة</p>
+                </div>
+                
+                <div class="company-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="company-logo">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>الدلتا للنقل</h3>
+                    <div class="company-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.8/5</span>
+                    </div>
+                    <p>شبكة واسعة من الرحلات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">كيف يعمل</span>
+                <h2 class="section-title">احجز رحلتك في 3 خطوات بسيطة</h2>
+                <p class="section-subtitle">عملية حجز سهلة وسريعة في دقائق معدودة</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>ابحث عن رحلتك</h3>
+                        <p>اختر مدينة المغادرة والوصول وتاريخ السفر</p>
+                    </div>
+                </div>
+                
+                <div class="step-arrow" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-chair"></i>
+                        </div>
+                        <h3>اختر مقعدك</h3>
+                        <p>حدد الرحلة المناسبة واختر مقعدك المفضل</p>
+                    </div>
+                </div>
+                
+                <div class="step-arrow" data-aos="fade-up" data-aos-delay="250">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>ادفع واحجز</h3>
+                        <p>أكمل عملية الدفع واحصل على تذكرتك فوراً</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="15000">0</div>
+                        <div class="stat-label">عميل سعيد</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="25">0</div>
+                        <div class="stat-label">شركة نقل</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="60">0</div>
+                        <div class="stat-label">مدينة</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="50000">0</div>
+                        <div class="stat-label">تذكرة محجوزة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">آراء العملاء</span>
+                <h2 class="section-title">ماذا يقول عملاؤنا عنا؟</h2>
+                <p class="section-subtitle">تجارب حقيقية من عملائنا الكرام</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"خدمة ممتازة وحجز سهل جداً. وصلت تذكرتي فوراً وكانت الرحلة مريحة ومنظمة."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>أحمد محمد</h4>
+                            <span>من القاهرة</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"أفضل موقع لحجز تذاكر الأتوبيس. الأسعار معقولة والخدمة سريعة."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>فاطمة علي</h4>
+                            <span>من الإسكندرية</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"دعم العملاء رائع ومساعدة في أي وقت. أنصح بالموقع بشدة."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>محمود حسن</h4>
+                            <span>من أسوان</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>جاهز للسفر؟</h2>
+                <p>احجز رحلتك الآن واستمتع بتجربة سفر مميزة مع أفضل شركات النقل</p>
+                <div class="cta-buttons">
+                    <button class="cta-btn primary" onclick="scrollToSearch()">
+                        <i class="fas fa-search"></i>
+                        ابحث عن رحلة
+                    </button>
+                    <button class="cta-btn secondary">
+                        <i class="fas fa-phone"></i>
+                        اتصل بنا: 19199
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo-container">
+                            <i class="fas fa-bus logo-icon"></i>
+                        </div>
+                        <span class="brand-name">Tripo</span>
+                    </div>
+                    <p>منصة حجز الأتوبيسات الرائدة في مصر. نوفر لك أفضل تجربة حجز مع أكثر من 20 شركة نقل موثوقة.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>الخدمات</h4>
+                    <ul>
+                        <li><a href="#">حجز التذاكر</a></li>
+                        <li><a href="#">إلغاء الحجز</a></li>
+                        <li><a href="#">تعديل الحجز</a></li>
+                        <li><a href="#">استرداد الأموال</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>المساعدة</h4>
+                    <ul>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 19199</p>
+                        <p><i class="fas fa-envelope"></i> info@tripo.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tripo. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 50
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>

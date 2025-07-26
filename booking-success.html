@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم الحجز بنجاح - Tripo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="index.html" class="nav-brand">
+                        <img src="images/logo.png" alt="Tripo Logo" class="logo" />
+                        <span class="brand-name">Tripo</span>
+                    </a>
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link">الرئيسية</a>
+                        <a href="search-results.html" class="nav-link">الرحلات</a>
+                        <a href="#" class="nav-link">الشركات</a>
+                        <a href="#" class="nav-link">من نحن</a>
+                        <a href="#" class="nav-link">اتصل بنا</a>
+                    </div>
+                    <div class="nav-actions">
+                        <div class="language-selector">
+                            <span class="flag">🇪🇬</span>
+                            <span>AR</span>
+                        </div>
+                        <div class="currency-selector">
+                            <span>EGP (ج.م)</span>
+                        </div>
+                        <button class="user-menu">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+    <!-- Success Section -->
+    <section class="success-section">
+        <div class="container">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                
+                <h1 class="success-title">تم حجزك بنجاح!</h1>
+                <p class="success-message">شكراً لاختيارك Tripo. تم تأكيد حجزك وإرسال التفاصيل على رقم الموبايل المسجل.</p>
+                
+                <div class="booking-reference">
+                    <span class="reference-label">رقم الحجز:</span>
+                    <span class="reference-number" id="bookingNumber">TR2025-001234</span>
+                    <button class="copy-btn" onclick="copyBookingNumber()">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Booking Details Card -->
+            <div class="booking-details-card">
+                <h2>تفاصيل الحجز</h2>
+                
+                <div class="booking-info">
+                    <div class="trip-header">
+                        <div class="company-info">
+                            <img id="companyLogo" src="images/companies/horus.png" alt="Company Logo">
+                            <span id="companyName">حورس للنقل</span>
+                        </div>
+                        <div class="bus-type" id="busType">VIP</div>
+                    </div>
+                    
+                    <div class="route-details">
+                        <div class="route-point">
+                            <div class="point-time" id="departureTime">08:00</div>
+                            <div class="point-city" id="departureCity">القاهرة</div>
+                            <div class="point-station">محطة تجمع الأتوبيسات</div>
+                        </div>
+                        
+                        <div class="route-line">
+                            <div class="line"></div>
+                            <div class="duration" id="tripDuration">3 ساعات 30 دقيقة</div>
+                        </div>
+                        
+                        <div class="route-point">
+                            <div class="point-time" id="arrivalTime">11:30</div>
+                            <div class="point-city" id="arrivalCity">الإسكندرية</div>
+                            <div class="point-station">محطة سيدي جابر</div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">التاريخ:</span>
+                            <span class="meta-value" id="tripDate">الأحد، 20 يوليو 2025</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">المقاعد:</span>
+                            <span class="meta-value" id="seatNumbers">A12, A13</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">المسافرين:</span>
+                            <span class="meta-value" id="passengerName">أحمد محمد علي</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">رقم الموبايل:</span>
+                            <span class="meta-value" id="passengerPhone">01234567890</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-summary">
+                    <h3>ملخص الدفع</h3>
+                    <div class="payment-details">
+                        <div class="payment-row">
+                            <span>قيمة التذاكر:</span>
+                            <span id="ticketsAmount">180 ج.م</span>
+                        </div>
+                        <div class="payment-row">
+                            <span>رسوم الخدمة:</span>
+                            <span id="serviceAmount">20 ج.م</span>
+                        </div>
+                        <div class="payment-row">
+                            <span>الضرائب:</span>
+                            <span id="taxesAmount">30 ج.م</span>
+                        </div>
+                        <hr>
+                        <div class="payment-row total">
+                            <span>المجموع المدفوع:</span>
+                            <span id="totalAmount">230 ج.م</span>
+                        </div>
+                        <div class="payment-method">
+                            <span>طريقة الدفع:</span>
+                            <span id="paymentMethodUsed">فودافون كاش</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Information -->
+            <div class="important-info">
+                <h3><i class="fas fa-info-circle"></i> معلومات مهمة</h3>
+                <ul>
+                    <li>يرجى الوصول للمحطة قبل 30 دقيقة من موعد المغادرة</li>
+                    <li>أحضر معك بطاقة الهوية الشخصية لاستلام التذكرة</li>
+                    <li>رقم الحجز مطلوب لاستلام التذكرة</li>
+                    <li>يمكنك إلغاء الحجز مجاناً حتى 24 ساعة قبل موعد الرحلة</li>
+                    <li>للاستفسارات اتصل على: 19199</li>
+                </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn primary" onclick="downloadTicket()">
+                    <i class="fas fa-download"></i>
+                    تحميل التذكرة
+                </button>
+                
+                <button class="btn secondary" onclick="shareBooking()">
+                    <i class="fas fa-share-alt"></i>
+                    مشاركة الحجز
+                </button>
+                
+                <button class="btn outline" onclick="goToHome()">
+                    <i class="fas fa-home"></i>
+                    العودة للرئيسية
+                </button>
+            </div>
+
+            <!-- Customer Support -->
+            <div class="support-section">
+                <h3>تحتاج مساعدة؟</h3>
+                <div class="support-options">
+                    <a href="tel:19199" class="support-btn">
+                        <i class="fas fa-phone"></i>
+                        اتصل بنا: 19199
+                    </a>
+                    
+                    <a href="https://wa.me/201234567890" class="support-btn whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        واتساب
+                    </a>
+                    
+                    <a href="mailto:support@tripo.com" class="support-btn">
+                        <i class="fas fa-envelope"></i>
+                        البريد الإلكتروني
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking-success.js"></script>
+</body>
+</html>
