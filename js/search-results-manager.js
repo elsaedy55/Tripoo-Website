@@ -480,7 +480,7 @@ class SearchResultsManager {
                             التفاصيل
                         </button>
                         <button class="btn" style="background: #1e40af; color: white; border: none; font-size:13px; padding: 6px 16px; border-radius: 6px;" onclick="selectTrip('${trip.id}')">
-                            اختيار المقاعد
+                            احجز
                         </button>
                     </div>
                 </div>
@@ -797,7 +797,7 @@ function viewTripDetails(tripId) {
                     إغلاق
                 </button>
                 <button onclick="selectTrip('${trip.id}')" style="background: #1e40af; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
-                    اختيار هذه الرحلة
+                    احجز
                 </button>
             </div>
         `;
