@@ -735,30 +735,50 @@ function viewTripDetails(tripId) {
                             </span>
                         </div>
                         <div style="margin: 16px 0 0 0; padding: 0 10px;">
-                            <div style="position: relative; padding-right: 26px;">
-                                <div style="position: absolute; right: 17px; top: 0; bottom: 0; width: 2px; background: #e5e7eb; border-radius: 1px;"></div>
-                                <!-- نقطة البداية -->
-                                <div style="display: flex; align-items: center; margin-bottom: 14px; position: relative; z-index:1;">
-                                    <span style="position: absolute; right: 9px; width: 10px; height: 10px; background: #60a5fa; border-radius: 50%; border: 1.5px solid #fff;"></span>
-                                    <span style="margin-right: 22px; font-weight: 500; color: #22292f; font-size: 13px;">${window.searchManager ? window.searchManager.getCityName(trip.fromCity) : trip.fromCity}</span>
-                                    <span style="color:#94a3b8; font-size:12px; margin-right:8px;">${trip.departureTime}</span>
-                                </div>
-                                <!-- نقاط التوقف -->
-                                ${stops.map((stop, idx) => `
-                                    <div style="display: flex; align-items: center; margin-bottom: 14px; position: relative; z-index:1;">
-                                        <span style="position: absolute; right: 11px; width: 8px; height: 8px; background: #cbd5e1; border-radius: 50%; border: 1.5px solid #fff;"></span>
-                                        <span style="margin-right: 22px; color: #475569; font-size: 12.5px;">${stop.name}</span>
-                                        <span style="color:#b0b6be; font-size:11.5px; margin-right:8px;">${stop.time}</span>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+                                    <!-- محطات قيام -->
+                                    <div style="background:#f8fafc; padding:12px; border-radius:8px;">
+                                        <h5 style="margin:0 0 8px 0; font-size:13px; color:#1e293b;">محطات قيام</h5>
+                                        <div style="display:flex; flex-direction:column; gap:10px;">
+                                            <div style="display:flex; justify-content:space-between; align-items:center; padding:6px; background:white; border-radius:6px;">
+                                                <div style="font-weight:600; color:#22292f;">${window.searchManager ? window.searchManager.getCityName(trip.fromCity) : trip.fromCity}</div>
+                                                <div style="color:#94a3b8; font-size:12px;">${trip.departureTime}</div>
+                                            </div>
+                                            ${stops.length > 0 ? (() => {
+                                                const mid = Math.ceil(stops.length/2);
+                                                const departureStops = stops.slice(0, mid);
+                                                return departureStops.map(stop => `
+                                                    <div style="display:flex; justify-content:space-between; align-items:center; padding:6px; background:white; border-radius:6px;">
+                                                        <div style="color:#475569;">${stop.name}</div>
+                                                        <div style="color:#b0b6be; font-size:12px;">${stop.time}</div>
+                                                    </div>
+                                                `).join('');
+                                            })() : ''}
+                                        </div>
                                     </div>
-                                `).join('')}
-                                <!-- نقطة النهاية -->
-                                <div style="display: flex; align-items: center; margin-bottom: 0; position: relative; z-index:1;">
-                                    <span style="position: absolute; right: 9px; width: 10px; height: 10px; background: #6366f1; border-radius: 50%; border: 1.5px solid #fff;"></span>
-                                    <span style="margin-right: 22px; font-weight: 500; color: #22292f; font-size: 13px;">${window.searchManager ? window.searchManager.getCityName(trip.toCity) : trip.toCity}</span>
-                                    <span style="color:#94a3b8; font-size:12px; margin-right:8px;">${trip.arrivalTime}</span>
+
+                                    <!-- محطات وصول -->
+                                    <div style="background:#f8fafc; padding:12px; border-radius:8px;">
+                                        <h5 style="margin:0 0 8px 0; font-size:13px; color:#1e293b;">محطات وصول</h5>
+                                        <div style="display:flex; flex-direction:column; gap:10px;">
+                                            ${stops.length > 0 ? (() => {
+                                                const mid = Math.ceil(stops.length/2);
+                                                const arrivalStops = stops.slice(mid);
+                                                return arrivalStops.map(stop => `
+                                                    <div style="display:flex; justify-content:space-between; align-items:center; padding:6px; background:white; border-radius:6px;">
+                                                        <div style="color:#475569;">${stop.name}</div>
+                                                        <div style="color:#b0b6be; font-size:12px;">${stop.time}</div>
+                                                    </div>
+                                                `).join('');
+                                            })() : ''}
+                                            <div style="display:flex; justify-content:space-between; align-items:center; padding:6px; background:white; border-radius:6px;">
+                                                <div style="font-weight:600; color:#22292f;">${window.searchManager ? window.searchManager.getCityName(trip.toCity) : trip.toCity}</div>
+                                                <div style="color:#94a3b8; font-size:12px;">${trip.arrivalTime}</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <div style="margin-top:10px">
                             <strong>عدد المحطات:</strong> ${trip.numberOfStops === 0 ? 'مباشر (بدون توقف)' : trip.numberOfStops + ' توقف'}
                         </div>
